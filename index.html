@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="PalaParadise where you eat health food 365 days a year!">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+
+    <title>Ponto da Comida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+    <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
+</head>
+
+<body>
+
+    <header class="header sticky ">
+        <a href="#">
+            <img class="header-logo" src="img/omnifood-logo.png" alt="" />
+        </a>
+        <nav class="header-nav">
+            <ul class="main-nav-list">
+                <li><a class="nav-link" href="#how">Como funciona</a></li>
+                <li><a class="nav-link" href="#meals">Refeições</a></li>
+                <li><a class="nav-link" href="#testimonials">Depoimentos</a></li>
+                <li><a class="nav-link" href="#pricing">Preços</a></li>
+                <li><a class="nav-link nav-button" href="#cta">Experimente grátis</a></li>
+            </ul>
+        </nav>
+        <button class="btn-mobile-nav">
+            <ion-icon name="menu-outline" class="icon-mobile-nav"></ion-icon>
+            <ion-icon name="close-outline" class="icon-mobile-nav"></ion-icon>
+        </button>
+    </header>
+
+    <main>
+        <section class="section-hero">
+            <div class="hero">
+                <div class="hero-text-box">
+                    <h1 class="heading-primary">
+                        Uma refeição saudável e deliciosa entregue diretamente na sua porta, todos os dias
+                    </h1>
+                    <p class="hero-description">
+                        Coma saudável durante os 365 dias do ano, desfrutando de alimentos deliciosos, mantendo uma vida
+                        saudável e melhorando sua qualidade de vida. Atendemos todas as suas necessidades nutricionais e
+                        de alimentação fitness.
+                    </p>
+                    <div class="hero-img-box">
+                        <a href="#cta" class="btn btn-full margin-right-sml">Peça agora</a>
+                        <a href="#how" class="btn btn-outline">Saiba mais &darr;</a>
+                        <div class="delivered-meals">
+                            <div class="delivered-imgs">
+                                <img src="img/customers/customer-1.jpg" alt="foto de um cliente" />
+                                <img src="img/customers/customer-2.jpg" alt="foto de um cliente" />
+                                <img src="img/customers/customer-3.jpg" alt="foto de um cliente" />
+                                <img src="img/customers/customer-4.jpg" alt="foto de um cliente" />
+                                <img src="img/customers/customer-5.jpg" alt="foto de um cliente" />
+                                <img src="img/customers/customer-6.jpg" class="fit" alt="foto de um cliente" />
+                                <p class="delivered-text">
+                                    <span> Mais de 150.000+ </span> refeições entregues no mês passado
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-img-box">
+                    <picture>
+                        <source srcset="img/meals/hero.webp">
+                        <source srcset="img/meals" />
+                    </picture>
+
+                    <img src="img/hero.png" class="hero-img"
+                        alt="Mulher comendo, tigelas de comida e refeições armazenadas em um recipiente" />
+                </div>
+            </div>
+        </section>
+        <section class="section-featured">
+            <div class="container">
+                <h2 class="heading-featured-in">Como apareceu em</h2>
+                <div class="logos">
+                    <img src="img/logos/techcrunch.png" alt="logo techcrunch" />
+                    <img src="img/logos/business-insider.png" alt="logo Business Insider" />
+                    <img src="img/logos/the-new-york-times.png" alt="logo The New York Times" />
+                    <img src="img/logos/forbes.png" alt="logo Forbes" />
+                    <img src="img/logos/usa-today.png" alt="logo USA Today" />
+                </div>
+            </div>
+        </section>
+        <section class="section-how" id="how">
+            <div class="container">
+                <span class="subheading">Como funciona</span>
+                <h2 class="heading-secondary">Sua dose diária de saúde em 3 passos</h2>
+            </div>
+            <div class="container grid grid--2--cols .grid--align-v">
+                <div class="step-text-box">
+                    <p class="step-number">01</p>
+                    <h3 class="heading-tertiary">
+                        Diga-nos o que você gosta (e o que não gosta)
+                    </h3>
+                    <p class="step-description">
+                        Diga-nos o que você gosta (e o que não gosta): nunca mais perca tempo pensando no que comer! O
+                        PalaParadise criará um plano de refeições semanal 100% personalizado para você. Ele garante que
+                        você receba todos os nutrientes e vitaminas necessários, independentemente da dieta que siga.
+                    </p>
+                </div>
+                <div class="step-img-box">
+                    <img src="img/app/app-screen-1.png" class="step-img" alt="iphone descrição comida" />
+                </div>
+                <div class="step-img-box">
+                    <img src="img/app/app-screen-2.png" class="step-img" alt="iphone descrição comida nutricional" />
+                </div>
+                <div class="step-text-box">
+                    <p class="step-number">02</p>
+                    <h3 class="heading-tertiary">Aprovar seu plano semanal de refeições</h3>
+                    <p class="step-description">
+                        Uma vez por semana, aprove o plano de refeições gerado para você pelo PalaParadise. Você pode
+                        alterar ingredientes, trocar refeições inteiras ou até adicionar suas próprias receitas.
+                    </p>
+                </div>
+                <div class="step-text-box">
+                    <p class="step-number">03</p>
+                    <h3 class="heading-tertiary">Receba as refeições no horário conveniente</h3>
+                    <p class="step-description">
+                        Os melhores chefs da cidade cozinharão sua refeição selecionada todos os dias e a entregaremos
+                        em
+                        sua casa no horário que for mais conveniente para você. Você pode alterar o horário e o endereço
+                        da entrega a qualquer momento!
+                    </p>
+                </div>
+                <div class="step-img-box">
+                    <img src="img/app/app-screen-3.png" class="step-img" alt="iphone com informações de entrega" />
+                </div>
+            </div>
+        </section>
+        <section class="section-meals" id="meals">
+            <div class="container center-text">
+                <span class="subheading">Refeições</span>
+                <h2 class="heading-secondary">O PalaParadise escolhe entre mais de 5.000 receitas</h2>
+            </div>
+            <div class="container grid grid--3--cols margin-bottom-md">
+                <div class="meal">
+                    <img src="img/meals/meal-1.jpg" alt="imagem de refeição japonesa Gyozas" class="meal-img">
+                    <div class="meal-content">
+                        <div class="meal-tags">
+                            <span class="tag tag--vegetarian">Vegetariano</span>
+                        </div>
+                        <p class="meal-title">Gyozas Japonesas</p>
+                        <ul class="meal-attributes">
+                            <li class="meal-attribute">
+                                <ion-icon name="flame-outline" class="meal-icon"></ion-icon>
+                                <span><strong>650</strong> calorias</span>
+                            </li>
+                            <li class="meal-attribute">
+                                <ion-icon name="restaurant-outline" class="meal-icon"></ion-icon><span>
+                                    NutriScore &reg; <strong>74</strong></span>
+                            </li>
+                            <li class="meal-attribute">
+                                <ion-icon name="star-outline" class="meal-icon"></ion-icon>
+                                <span><strong>4.9</strong> avaliação (537)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="meal">
+                    <img src="img/meals/meal-2.jpg" alt="imagem de refeição de Salada de Abacate" class="meal-img">
+                    <div class="meal-content">
+                        <div class="meal-tags">
+                            <span class="tag tag--vegan">Vegana</span>
+                            <span class="tag tag--paleo">Paleo</span>
+                        </div>
+                        <p class="meal-title">Salada de Abacate</p>
+                        <ul class="meal-attributes">
+                            <li class="meal-attribute">
+                                <ion-icon name="flame-outline" class="meal-icon"></ion-icon>
+                                <span><strong>400</strong> calorias</span>
+                            </li>
+                            <li class="meal-attribute">
+                                <ion-icon name="restaurant-outline" class="meal-icon"></ion-icon><span>
+                                    NutriScore &reg; <strong>92</strong></span>
+                            </li>
+                            <li class="meal-attribute">
+                                <ion-icon name="star-outline" class="meal-icon"></ion-icon>
+                                <span><strong>4.9</strong> avaliação (442)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="diets">
+                    <h3 class="heading-tertiary">Dietas à sua escolha:</h3>
+                    <ul class="list">
+                        <li class="list-items"><ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                            <span> Vegetariana</span>
+                        </li>
+                        <li class="list-items"><ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                            <span> Sem glúten</span>
+                        </li>
+                        <li class="list-items"><ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                            <span> Sem lactose</span>
+                        </li>
+                        <li class="list-items"><ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                            <span> Keto</span>
+                        </li>
+                        <li class="list-items"><ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                            <span> Paleo</span>
+                        </li>
+                        <li class="list-items"><ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                            <span> Vegan</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="section-cta" id="cta">
+            <div class="cta">
+                <div class="container">
+                    <h2 class="heading-secondary">
+                        Comece sua jornada de bem-estar hoje mesmo!
+                    </h2>
+                    <p class="cta-text">Pule para a melhor versão de si mesmo! Peça a sua refeição agora e sinta a
+                        diferença</p>
+                    <a href="#meals" class="btn btn-full margin-top-md">Peça agora</a>
+                </div>
+            </div>
+        </section>
+        <section class="section-footnotes">
+            <div class="container">
+                <h2 class="heading-secondary">
+                    Feito para as pessoas que buscam mais saúde e um estilo de vida melhor.
+                </h2>
+                <p class="section-footnotes-text">PalaParadise oferece aos seus clientes apenas o melhor e mais
+                    saudável,
+                    com entrega pontual. Experimente nossa deliciosa comida e obtenha mais energia e saúde!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container grid grid-footer">
+            <div class="logo-col">
+                <a href="#" class="footer-logo">
+                    <img class="header-logo" src="img/omnifood-logo.png" class="footer-link" />
+                </a>
+                <ul class="social-link">
+                    <li><a href="#" class="footer-link">
+                            <ion-icon class="social-icon" name="logo-instagram"></ion-icon>
+                        </a></li>
+                    <li><a href="#" class="footer-link">
+                            <ion-icon class="social-icon" name="logo-facebook"></ion-icon></a></li>
+                    <li><a href="#" class="footer-link">
+                            <ion-icon class="social-icon" name="logo-linkedin"></ion-icon></a></li>
+                </ul>
+                <p class="copyright">Copyright &copy;2023 por PalaParadise. Todos os direitos reservados</p>
+            </div>
+            <div class="adress-col">
+                <p class="footer-heading">Entre em contato</p>
+                <address class="contacts">
+                    <p class="adress">623 Harrison St., 2º andar, San Francisco, CA 85406</p>
+                    <p>
+                        <a href="tel:99250477" class="footer-link">99250477</a>
+                        <a href="mailto:contactPalaparadise@gmail.com" class="footer-link">PalaParadise@gmail.com</a>
+                    </p>
+                </address>
+            </div>
+            <nav class="nav-col">
+                <p class="footer-heading">Entre em contato</p>
+                <ul class="footer-nav">
+                    <li><a href="#" class="footer-link">Criar conta</a></li>
+                    <li><a href="#" class="footer-link">Entrar</a></li>
+                    <li><a href="#" class="footer-link">App IOS</a></li>
+                    <li><a href="#" class="footer-link">App Android</a></li>
+                </ul>
+            </nav>
+            <nav class="nav-col">
+                <p class="footer-heading">Empresa</p>
+                <ul class="footer-nav">
+                    <li><a href="#" class="footer-link">Sobre o PalaParadise</a></li>
+                    <li><a href="#" class="footer-link">Para negócios</a></li>
+                    <li><a href="#" class="footer-link">Parceiros de cozinha</a></li>
+                    <li><a href="#" class="footer-link">Carreiras</a></li>
+                </ul>
+            </nav>
+            <nav class="nav-col">
+                <p class="footer-heading">Recursos</p>
+                <ul class="footer-nav">
+                    <li><a href="#" class="footer-link">Diretório de receitas</a></li>
+                    <li><a href="#" class="footer-link">Central de ajuda</a></li>
+                    <li><a href="#" class="footer-link">Privacidade e termos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script/index.js"></script>
+</body>
+
+</html>
+
+&darr; down arrow, &rarr; right arrow...
+ctrl+l abd ctrl+d
+Always put all elements inside a div or any other tag but inside a section or other tag, cuzy the secondary tag may be a
+width less than the whole screen, and we may wanna center this, so, having a section or something like that as a primary
+tag, this can have all backgroundcolor free for paint or any other thing. Cuzy the secondary tag have a fixed width like
+1200px, and if the wite must have all screnn with a background the primary tag that wasn't restricted can do this.
+
+alt+ click select multiple places
+
+https://ionic.io/ionicons
+
+role="img" we use for background-img in the css, how we put the image with css, we do this in the css in order to the
+div doesn't get empty aria-label:To describe the kind of image is in the background-img
+
+Label: Use this with inputs <label for="full-name">Full name</label>
+<input type="text" id="full-name">. Inside the label, there is the for, if you use the same name as the id in the input,
+the label will be linked to the input, and as soon as you press the text of the label, the input will be selected as
+well
+
+Action: inside the form there is a action, it says where the form will be send for
+
+select and option: Select there is a id like in input, and you can use a label for make this link, the select with the
+option will open a box of options to the user choose one, the text that will appear is the text that will be the options
+for the user, usually, the first option we don't put any value, only to ask to answer the select we use this.
+input and select and option doesn't inherit the font-family of the body.
+
+Footer comes outise the main, cuzy we repeat this in other pages, so, inside main is all content that we won't reuse in
+other pages
+semantic tag: Adress
+
+<a href="tel:99250477">99250477</a>
+<a href="mailto:Palaparadise@gmail.com">PalaParadise@gmail.com</a>
+This href for tel:99250477 after pressing the text that is inside the tag a, will be redirected for call to the number
+was passed in tel. The same happen with mailto, passing this, after pressing the text inside the a , will be redicected
+to send a email to this email that was passed to the malito
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+This make the responsive work in phone and tablet in the real website, without this, the effects os media query doesn't
+apply
+
+Usually we use id's to scroll over a page, we use the # in the tag a and then the the name id, after clicking that, will
+be taken there
+
+
+lighthouse on inspect to make improvements in teh website
+
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon"> Flavicon for devices
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png" Flavicon for apple and ios manifest.webmanifest this was
+    written for the flavicon in androids <link rel="manifest" href="manifest.webmanifest" />
+are differents sizes, for androis 192 and 512 for apple 180 and for browser must be 62
+
+It's good for the images to have half of the size of a big image when resize them with css
+
+It's good always check out in can i use if some tecnologie can be use and some browsers how safari. For exp the kind of
+image webp, we have to use a trick to this work out
+
+
+https://www.netlify.com/ to make deploys
+deploy the site using netlify we can use in the form the atribute netlify = "" it we can get the data that are submited
+and we see this in the site of netlify, learn more section 9, class 11 in
+-->

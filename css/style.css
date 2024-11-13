@@ -1,0 +1,752 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+*:focus {
+  outline: none;
+  /* outline: 4px dotted #e67e22;
+    outline-offset: 8px; */
+  box-shadow: 0 0 0 5px rgba(230, 125, 34, 0.3);
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  /* Sometimes to a overflow works is necessary to apply it in the html and the body */
+  scroll-behavior: smooth; /*It will turn the behavior of the sroll smooth, but it doesn't work for devices of apple*/
+}
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  /* Only works if there's nothing absolutely positioned in relation to the body, we have to set the parent to position relative */
+  overflow-x: hidden;
+}
+/* *******************************************/
+/* Mobile************************/
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+}
+.icon-mobile-nav {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #333;
+}
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+/* *******************************************/
+/* General reuasable components************************/
+/* *******************************************/
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.5px;
+}
+.heading-primary {
+  line-height: 1.05;
+  font-size: 5.2rem;
+  margin-bottom: 3.2rem;
+}
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3rem;
+}
+.subheading {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #cf711f;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.75px;
+}
+.btn:link,
+.btn:visited,
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+  transition: all 0.3s;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.2rem;
+}
+.btn--form:hover {
+  background-color: #fff;
+  color: #555;
+}
+.btn-full:link,
+.btn-full:visited {
+  background-color: #e67e22;
+  color: #fff;
+}
+.btn-full:hover,
+.btn-full:active {
+  background-color: #cf711f;
+}
+
+.btn-outline:link,
+.btn-outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+.btn-outline:hover,
+.btn-outline:active {
+  background-color: #fdf2e9;
+  /* We've got to put a border in this button , if we just use the border, it will be created outside the button, we want inside cuzy otherwise it would make space when we put the mouse over the button, instead we use this blow, with inset which means the border come from inside */
+  box-shadow: inset 0 0 0 3px #fff;
+}
+.margin-right-sml {
+  margin-right: 1.6rem !important;
+}
+.container {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+.grid {
+  display: grid;
+  row-gap: 9.6rem;
+  column-gap: 6.4rem;
+  /* margin-bottom: 9.6rem; */
+}
+/* .grid:last-child{
+    margin-bottom: 0;
+  } 
+  instead of putting margin in the bottom of grid and removing this for the last child, cuzy if there is more than 1 grid the margin bottom will be necessary, otherwise would be colado one row with the other, but when use only one grid inside a container, there would be too much space because of the padding in each new section, so, we use this:
+  */
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+  /* If is not the last child will be applied this margin */
+}
+.grid--2--cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--3--cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid--4--cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid--5--cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+.grid--align-v {
+  align-items: center;
+}
+strong {
+  font-weight: 500;
+}
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
+}
+.all-recipes {
+  text-align: center;
+  font-size: 1.8rem;
+}
+.link:link,
+.link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #e67e22;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px; /*In order  to afastar the text from de border, we use padding, the padding will come from the text and the border is external*/
+  transition: all 0.3s;
+}
+.link:hover,
+.link:active {
+  color: #cf711f;
+  border-bottom: 1px solid transparent;
+}
+.center-text {
+  text-align: center;
+}
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.list-items {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  list-style: none;
+}
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #e67e22;
+}
+
+/* *******************************************/
+/* HEADER*************************************/
+/* *******************************************/
+.header-logo {
+  height: 2.2rem;
+}
+.header {
+  background-color: #fdf2e9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4.8rem; /*We use padding cuzy the space will come from inside the element and won't cut the background color, this is for give space in the sides left and right*/
+  height: 9.6rem;
+  position: relative;
+
+  /* In media query we used a position absolute in the 
+    ", and header is its father, so, here we set this to relative, to header-nav" be stuck in the header */
+}
+.main-nav-list {
+  display: flex;
+  gap: 4.8rem;
+  list-style: none;
+  align-items: center;
+}
+.nav-link:link,
+.nav-link:visited {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.3s;
+}
+.nav-link:hover,
+.nav-link:active {
+  color: #cf711f;
+}
+.nav-button:link,
+.nav-button:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+  color: #fff;
+  background-color: #e67e22;
+}
+.nav-button:hover,
+.nav-button:active {
+  background-color: #cf711f;
+}
+/* *******************************************/
+/* HERO SECTION*************** */
+/* *******************************************/
+
+.section-hero {
+  background-color: #fdf2e9;
+  padding: 4.8rem 0 9.6rem 0; /*In top and bottom 9.6 rem and left and right zero,we use padding in order to don't prejudicar the backgroud-color, margin could do this moving the background colocr*/
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /*We created 2 columns, and bellow, we have 2 elements heading-primary and hero-img, each of them will tak each column, each with 50% of the total screen, because of we created 2 columns each with 1fr, that means each will have the same size. and they will be flexible*/
+  max-width: 130rem; /*Max-width instead of only width, it helps the page becomes responsive */
+  justify-items: center;
+  margin: 0 auto; /*In order to the container named hero  go to the center of the browser*/
+  align-items: center;
+  gap: 9.6rem;
+  padding: 0 3.2rem;
+}
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+.hero-img {
+  width: 100%; /* It's gonna take 50% of the whole container(hero), cuzy it is part of a container which has 2 columns each column with 1 fr */
+}
+.delivered-meals {
+  display: flex;
+  margin-top: 8rem;
+}
+.delivered-imgs {
+  display: flex;
+  align-items: center;
+  /* gap: 1.6rem; */
+}
+.delivered-imgs img {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  margin-right: -1.6rem; /*In order to gather the photos*/
+  border: 3px solid #fdf2e9;
+}
+.fit {
+  margin-right: 1.6rem !important;
+}
+
+.delivered-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.delivered-text span {
+  color: #cf711f;
+  font-weight: 700;
+}
+/* *******************************************/
+/* Featured in section *************************************/
+/* *******************************************/
+.section-featured {
+  padding: 4.8rem 0 3.2rem 0;
+}
+.heading-featured-in {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2.4rem;
+  color: #888;
+}
+.logos {
+  display: flex;
+  justify-content: space-around;
+}
+.logos img {
+  height: 3.2rem;
+  filter: brightness(0);
+  opacity: 50%; /* it starts with 100% by default, and doing this, the image becomes ligher*/
+}
+/* *******************************************/
+/* How it works*************************************/
+/* *******************************************/
+.section-how {
+  padding: 9.6rem 0;
+}
+.step-number {
+  font-size: 8.6rem;
+  font-weight: 600;
+  color: #ddd;
+  margin-bottom: 1.2rem;
+}
+.step-description {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+.step-img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.step-img-box::before,
+.step-img-box::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /*Using top left an transform to center a element with position*/
+  border-radius: 50%;
+}
+.step-img-box::before {
+  width: 60%; /*In order to this content before we are creating be flexible, we're using percentage as well instead of fixed measure*/
+  /* padding-bottom: 60%; */
+  background-color: #fdf2e9;
+  /* height: 60%; */
+  padding-bottom: 60%; /*This is the same as setting up the height for 60%, but, somehow, setting the height this doesn't work out. And this is 60% of the 
+    parent's width*/
+  z-index: -2; /*A camada que foi criada vai ficar abaixo de qualquer outra q tiver o z index default*/
+}
+.step-img-box::after {
+  width: 45%;
+  padding-bottom: 45%;
+  z-index: -1;
+  background-color: #fae5d3;
+}
+
+.step-img {
+  width: 35%;
+}
+/* *******************************************/
+/* meal section*************************************/
+/* *******************************************/
+.section-meals {
+  padding: 9.6rem 0;
+}
+.meal {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 1.1rem;
+  overflow: hidden; /*Overflow everything that is in front of the element meal, which occupies all space of the component meal*/
+  transition: all 0.3s; /*The transition for the bolder or any other effect over the class meal*/
+}
+.meal-tags {
+  margin-bottom: 1.2rem;
+  display: flex;
+  gap: 4px;
+}
+.meal:hover {
+  transform: translateY(-1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, o, 0.6);
+}
+.meal-content {
+  padding: 3.2rem 4.8rem 4.8rem 4.8rem;
+}
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #333;
+  border-radius: 100px;
+  font-weight: 600;
+}
+.tag--vegetarian {
+  background-color: #51cf66;
+}
+.tag--vegan {
+  background-color: #94d82d;
+}
+.tag--paleo {
+  background-color: #ffd43b;
+}
+.meal-title {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 3.2rem;
+}
+.meal-attributes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.meal-attribute {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.meal-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #e67e22;
+}
+.meal-img {
+  width: 100%;
+}
+/* **********************************
+      Testimonials
+      *********************************/
+
+.section-testimonials {
+  background-color: #fdf2e9;
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  align-items: center;
+}
+.testimonial-container {
+  padding: 9.6rem;
+}
+.testimonials {
+  /*We are Recreating the grid cuzy the one was created before is not a good fit for the testimonials but for sbigger comonents*/
+  display: grid;
+  grid-template-columns: 1fr 1fr; /*We can think of it as a term of percentage too, the first will have 55% and the second 45, but never use percentage here*/
+  row-gap: 4.8rem;
+  column-gap: 8rem;
+  /* We're creating the grid here manually cuzy the grid default we created there were padding in there, and we don't want this here */
+}
+.testimonial-img {
+  width: 6.4rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+.testimonial-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+}
+.testimonial-name {
+  font-size: 1.6rem;
+  color: #6f6f6f;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+.gallery-item {
+  overflow: hidden;
+  /* We are doing this because when we pass the cursor over the img and it scale, it takes more than the own space of each image and enter in the space of the other img, the image overflow the gallery-item  so, we put in the father overflow:hiden, that means the space that would be taken for the image will be hidden and won't be taken, so, we fix like this. */
+}
+.gallery-item img {
+  display: block; /*Images are inline, when we put a lot of images ofe bellow the other in the html it create a space, in order to solve this, turn the img to block*/
+  width: 100%; /*In order to the img take only 100% of the entire width remaining*/
+  transition: all 0.4s;
+}
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
+/* **********************************
+      Pricing
+      *********************************/
+.section-pricing {
+  padding: 9.6rem 0;
+}
+.pricing-plan {
+  border-radius: 1.1rem;
+  width: 75%; /*The width was taking all the space that was set by the grid in the parent container, but, we want the width a bit narrow, smaller, then, we do this.*/
+}
+.pricing-plan--starter {
+  justify-self: end; /*We created another class in order to align this item horizontally to the end in order to get closer to the other element, that's why we created another class, only for this element get the style.*/
+  border: 2px solid #fdf2e9;
+  padding: 4.6rem;
+  /* Pricing-plan is the father of pricing-plan--end and pricing-plan--started. How we wanna put the focus in the pricing-plan--end, we put there a background-color and here only a border, how we've put a border here, it's automatically added a padding, so, here we use the padding only 4.6 but in the other element, pricing-plan--end we use 4.8, cuzy the border here is 2 px, here the padding will have 2 px less. */
+}
+.pricing-plan--end {
+  background-color: #fdf2e9;
+  padding: 4.8rem;
+  position: relative;
+  overflow: hidden; /*In order to cut the element after we created bellow, everything that is inside pricing--end and pass this container is cutted of*/
+}
+.pricing-plan--end::after {
+  content: "Best value ";
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  top: 6%;
+  right: -18%; /*We had some attempts in inspect in order to find these numbers, started with 0 each in order to grab in the top in the right*/
+  background-color: #ffd43b;
+  color: #333;
+  padding: 8px 8rem;
+  transform: rotate(45deg);
+}
+.plan-header {
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
+.plan-name {
+  color: #cf711f;
+  font-weight: 600;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25;
+  margin-bottom: 3.2rem;
+}
+.plan-price {
+  font-size: 6.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.6rem;
+}
+.plan-price span {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-right: 0.8rem;
+}
+.plan-text {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+.plan-signup {
+  text-align: center;
+  margin-top: 4.8rem;
+}
+.plan-details {
+  font-size: 1.8rem;
+  text-align: center;
+  line-height: 1.6rem;
+}
+
+.feature-icon {
+  color: #e67e22;
+  height: 3.2rem;
+  width: 3.2rem;
+  margin-bottom: 3.2rem;
+  background-color: #fdf2e9;
+  padding: 1.6rem;
+  border-radius: 50%;
+}
+.feature-title {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+.feature-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+.section-pricing {
+  padding: 9.6rem 0;
+}
+/* **********************************
+      CTA
+      *********************************/
+.section-cta {
+  /* padding: 9.6rem 0 12.8rem 0; */
+  padding: 4.8rem 0 12.6rem;
+  /* top horizontally bottom */
+}
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  /* background-color: #e67e22;  */
+  border-radius: 11px;
+  background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
+}
+.cta-text-box {
+  color: #2e1907;
+  padding: 4.8rem 6.8rem 6.4rem 6.4rem;
+}
+.cta-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
+}
+.cta .heading-secondary {
+  /* color: #2e1907; */
+  color: inherit; /*It's not necessary to define the color again, cuzy the father which is cta-text-box already has the same colo, so, we just have to inherit that*/
+  margin-bottom: 3.2rem;
+}
+.cta-img-box {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(235, 151, 78, 0.35),
+      rgba(230, 125, 34, 0.34)
+    ),
+    url(../img/eating.jpg);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.cta-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+}
+.cta-form label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+.cta-form input,
+.cta-form select {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  background-color: #fdf2e9;
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.cta-form input::placeholder {
+  color: #aaa;
+}
+
+.cta *:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px rgba(253, 242, 233, 0.3);
+}
+/* **********************************
+      Footer
+      *********************************/
+.footer {
+  padding: 12.6rem 0;
+  border-top: 1px solid #eee;
+}
+.grid-footer {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+}
+.footer-logo {
+  display: block;
+  margin-bottom: 3.2rem;
+}
+.social-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 3.2rem;
+}
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #767676;
+  transition: all 0.3s;
+}
+.footer-link:hover,
+.footer-link:active {
+  color: #555;
+}
+.social-link {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+.copyright {
+  font-size: 1.4rem;
+  color: #767676;
+  line-height: 1.6;
+  margin-top: auto;
+}
+.logo-col {
+  display: flex;
+  flex-direction: column;
+}
+.contacts {
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+.adress {
+  margin-bottom: 2.4rem;
+}
+/* Sticky navigation */
+.sticky .header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.97);
+  height: 8rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+.sticky .section-hero {
+  margin-top: 9.6rem;
+}
